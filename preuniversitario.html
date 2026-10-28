@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preuniversitario PAES | SurEduca - Ingreso a la Universidad</title>
+  <meta name="description" content="Preuniversitario SurEduca: Prepárate hoy para tu mejor mañana. Clases en vivo, simulacros PAES, acompañamiento vocacional y resultados comprobados.">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top notice bar -->
+  <div class="top-notice-bar">
+    <div class="container top-notice-inner">
+      <div class="top-notice-text">
+        <span class="top-notice-badge">¡Cupos Limitados! - Matrícula 2026</span>
+        <span>Da el primer paso hacia un futuro con más oportunidades.</span>
+      </div>
+      <div class="top-notice-actions">
+        <a href="#solicita-informacion" class="btn-top-cta" data-open-modal data-program="Preuniversitario">
+          Inscríbete Ahora
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="https://wa.me/56912345678" target="_blank" class="btn-top-whatsapp whatsapp-trigger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo.png" alt="SurEduca Preuniversitario">
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="colegio-online.html" class="nav-link">Colegio Online</a></li>
+          <li><a href="preuniversitario.html" class="nav-link active">PreUniversitario</a></li>
+          <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-matricula" data-open-modal data-program="Preuniversitario">
+          Matrícula 2026
+        </button>
+      </div>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section: Preuniversitario (Diseño 6.jpg) -->
+  <section class="hero-section">
+    <div class="hero-curved-bg"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge-tag">Preuniversitario SurEduca</span>
+        <h1 class="hero-title">
+          Prepárate hoy <br>
+          <span class="teal-text">para tu mejor mañana</span>
+        </h1>
+        <p class="hero-description">
+          Nuestro programa preuniversitario te brinda las herramientas académicas y emocionales para que ingreses a la carrera y universidad que sueñas.
+        </p>
+
+        <!-- 4 mini pilares del hero de 6.jpg -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px;">
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <img src="assets/images/icon-clases.png" alt="Clases claras" style="width: 32px; height: 32px; margin-bottom: 6px;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #0d2744;">Clases claras y dinámicas</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <img src="assets/images/icon-meta.png" alt="Metas alcanzables" style="width: 32px; height: 32px; margin-bottom: 6px;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #0d2744;">Metas alcanzables</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <img src="assets/images/icon-docente.png" alt="Docentes guías" style="width: 32px; height: 32px; margin-bottom: 6px;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #0d2744;">Docentes que te guían</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <img src="assets/images/icon-resultado.png" alt="Resultados" style="width: 32px; height: 32px; margin-bottom: 6px;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #0d2744;">Resultados que te acercan a tu sueño</span>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#programa-detalle" class="btn-primary">
+            Conoce nuestro programa
+          </a>
+          <button type="button" class="btn-whatsapp-outline" data-open-modal data-program="Preuniversitario">
+            Matricúlate Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="assets/images/hero-preu.png" alt="Estudiante en Preuniversitario SurEduca preparando la PAES" class="hero-main-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué elegir nuestro Preuniversitario? (5 Items de 7.jpg) -->
+  <div class="container" id="programa-detalle">
+    <div style="text-align: center; margin-bottom: 24px;">
+      <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--primary-navy);">
+        ¿Por qué elegir nuestro <span class="teal-text">Preuniversitario?</span>
+      </h2>
+    </div>
+
+    <div class="preu-benefits-bar">
+      <div class="preu-benefit-item">
+        <img src="assets/images/icon-clases.png" alt="Formación sólida" class="preu-benefit-icon">
+        <h4 class="preu-benefit-title">Formación académica sólida</h4>
+        <p class="preu-benefit-desc">Cursos intensivos en las principales áreas con docentes especializados.</p>
+      </div>
+
+      <div class="preu-benefit-item">
+        <img src="assets/images/icon-video-grabadas.png" alt="Simulacros" class="preu-benefit-icon">
+        <h4 class="preu-benefit-title">Simulacros y evaluación</h4>
+        <p class="preu-benefit-desc">Pon a prueba tus conocimientos constantemente y mejora tu rendimiento.</p>
+      </div>
+
+      <div class="preu-benefit-item">
+        <img src="assets/images/icon-meta.png" alt="Estrategias" class="preu-benefit-icon">
+        <h4 class="preu-benefit-title">Estrategias de aprendizaje</h4>
+        <p class="preu-benefit-desc">Técnicas de estudio y planificación para alcanzar todas tus metas.</p>
+      </div>
+
+      <div class="preu-benefit-item">
+        <img src="assets/images/icon-docente.png" alt="Acompañamiento" class="preu-benefit-icon">
+        <h4 class="preu-benefit-title">Acompañamiento integral</h4>
+        <p class="preu-benefit-desc">Apoyo académico y emocional durante todo tu proceso hacia la educación superior.</p>
+      </div>
+
+      <div class="preu-benefit-item">
+        <img src="assets/images/icon-resultado.png" alt="Resultados" class="preu-benefit-icon">
+        <h4 class="preu-benefit-title">Resultados comprobados</h4>
+        <p class="preu-benefit-desc">Miles de estudiantes ya alcanzaron su ingreso a la carrera de sus sueños.</p>
+      </div>
+    </div>
+
+    <!-- Sección de 3 Columnas de Preuniversitario (Diseño 7.jpg) -->
+    <div class="preu-three-cols-grid">
+      <!-- Columna 1: Nuestras áreas de preparación -->
+      <div class="preu-col-card">
+        <h3 class="preu-col-header">Nuestras áreas de preparación</h3>
+        <ul class="prep-subject-list">
+          <li class="prep-subject-item">
+            <div class="subject-icon-wrap">
+              <img src="assets/images/icon-mate.png" alt="Matemáticas">
+            </div>
+            <div>
+              <h4 class="subject-name">Matemáticas</h4>
+              <p class="subject-desc">Aritmética, Álgebra, Geometría, Trigonometría, Probabilidades y Resolución de Problemas (M1 y M2).</p>
+            </div>
+          </li>
+
+          <li class="prep-subject-item">
+            <div class="subject-icon-wrap">
+              <img src="assets/images/icon-verbal.png" alt="Razonamiento Verbal">
+            </div>
+            <div>
+              <h4 class="subject-name">Razonamiento Verbal</h4>
+              <p class="subject-desc">Comprensión lectora, vocabulario contextual, análisis de textos y habilidades comunicativas efectivas.</p>
+            </div>
+          </li>
+
+          <li class="prep-subject-item">
+            <div class="subject-icon-wrap">
+              <img src="assets/images/icon-fisica.png" alt="Física">
+            </div>
+            <div>
+              <h4 class="subject-name">Física</h4>
+              <p class="subject-desc">Mecánica, ondas, electricidad, movimiento, energía y principios fundamentales del universo.</p>
+            </div>
+          </li>
+
+          <li class="prep-subject-item">
+            <div class="subject-icon-wrap">
+              <img src="assets/images/icon-historia.png" alt="Historia y Geografía">
+            </div>
+            <div>
+              <h4 class="subject-name">Historia y Geografía</h4>
+              <p class="subject-desc">Historia de Chile y Universal, actualidad política, geografía económica y ciencias sociales.</p>
+            </div>
+          </li>
+
+          <li class="prep-subject-item">
+            <div class="subject-icon-wrap">
+              <img src="assets/images/icon-quimica.png" alt="Química">
+            </div>
+            <div>
+              <h4 class="subject-name">Química</h4>
+              <p class="subject-desc">Química general, orgánica e inorgánica, estequiometría, formulación y resolución práctica de ejercicios.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Nuestra Metodología (Pasos 1 al 5) -->
+      <div class="preu-col-card">
+        <h3 class="preu-col-header">Nuestra Metodología</h3>
+        <ul class="methodology-list">
+          <li class="methodology-step">
+            <img src="assets/images/step-1.png" alt="Paso 1" class="method-num-img">
+            <div>
+              <h4 class="method-title">Diagnóstico inicial</h4>
+              <p class="method-desc">Evaluamos tu nivel actual para crear un plan de estudio 100% personalizado.</p>
+            </div>
+          </li>
+
+          <li class="methodology-step">
+            <img src="assets/images/step-2.png" alt="Paso 2" class="method-num-img">
+            <div>
+              <h4 class="method-title">Plan de estudio personalizado</h4>
+              <p class="method-desc">Diseñamos una ruta de aprendizaje adaptada a tu ritmo y exigencias vocacionales.</p>
+            </div>
+          </li>
+
+          <li class="methodology-step">
+            <img src="assets/images/step-3.png" alt="Paso 3" class="method-num-img">
+            <div>
+              <h4 class="method-title">Clases dinámicas y prácticas</h4>
+              <p class="method-desc">Aprende de forma activa con recursos pedagógicos innovadores y ejercicios reales.</p>
+            </div>
+          </li>
+
+          <li class="methodology-step">
+            <img src="assets/images/step-4.png" alt="Paso 4" class="method-num-img">
+            <div>
+              <h4 class="method-title">Evaluación y seguimiento</h4>
+              <p class="method-desc">Medimos tu progreso periódicamente y reforzamos tus áreas de mejora en tutorías.</p>
+            </div>
+          </li>
+
+          <li class="methodology-step">
+            <img src="assets/images/step-5.png" alt="Paso 5" class="method-num-img">
+            <div>
+              <h4 class="method-title">Simulacros y repaso final</h4>
+              <p class="method-desc">Te preparamos académica y emocionalmente para enfrentar la rendición real con calma y seguridad.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Modalidades -->
+      <div class="preu-col-card">
+        <h3 class="preu-col-header">Modalidades</h3>
+        <div class="modalities-list">
+          <div class="modality-block">
+            <div class="modality-header">
+              <img src="assets/images/icon-en-vivo.png" alt="Clases en vivo" class="modality-icon-img">
+              <h4 class="modality-title">Clases en vivo</h4>
+            </div>
+            <p class="modality-desc">Interactúa con tus docentes y compañeros en tiempo real con dinámicas participativas.</p>
+            <ul class="modality-sublist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Horarios flexibles vespertinos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Participación activa en clase</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Resolución de dudas al instante</li>
+            </ul>
+          </div>
+
+          <div class="modality-block">
+            <div class="modality-header">
+              <img src="assets/images/icon-video-grabadas.png" alt="Clases grabadas 24/7" class="modality-icon-img">
+              <h4 class="modality-title">Clases grabadas 24/7</h4>
+            </div>
+            <p class="modality-desc">Accede a las sesiones cuando y donde quieras para repasar a tu propio ritmo.</p>
+            <ul class="modality-sublist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Acceso ilimitado a biblioteca virtual</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Estudia a tu propio ritmo</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> Disponible 24/7 en cualquier pantalla</li>
+            </ul>
+          </div>
+
+          <div class="modality-block">
+            <div class="modality-header">
+              <img src="assets/images/icon-libros.png" alt="Material exclusivo" class="modality-icon-img">
+              <h4 class="modality-title">Material exclusivo</h4>
+            </div>
+            <p class="modality-desc">Guías, resúmenes teóricos, solucionarios paso a paso y banco de preguntas PAES.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultados que nos Respaldan (8.jpg) -->
+    <section class="stats-banner-section">
+      <div class="container stats-grid-wrapper">
+        <div class="stats-left-col">
+          <h3>Resultados que nos respaldan</h3>
+          <div class="stats-three-items">
+            <div class="stat-item-box">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number">+15.000</div>
+                <div class="stat-label">estudiantes preparados</div>
+              </div>
+            </div>
+
+            <div class="stat-item-box">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18"></path>
+                  <path d="M3 10h18"></path>
+                  <path d="M5 6l7-3 7 3"></path>
+                  <path d="M4 10v11"></path>
+                  <path d="M20 10v11"></path>
+                  <path d="M8 14v4"></path>
+                  <path d="M12 14v4"></path>
+                  <path d="M16 14v4"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number">85%</div>
+                <div class="stat-label">ingreso a la universidad deseada</div>
+              </div>
+            </div>
+
+            <div class="stat-item-box">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number">20+</div>
+                <div class="stat-label">años de experiencia docente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-preview-card">
+          <div class="testimonial-quote-icon">“</div>
+          <div>
+            <p class="testimonial-text">
+              "Gracias a SurEduca logré ingresar a la universidad que siempre soñé. Las clases, los docentes y el acompañamiento fueron clave en mi preparación."
+            </p>
+            <div class="testimonial-author">— Valeria R., Ingreso a Medicina PUC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Precios y Formulario de Preuniversitario (Diseño 8.jpg) -->
+  <section class="pricing-and-form-section" id="solicita-informacion">
+    <div class="container">
+      <div class="pricing-form-grid">
+        <!-- Banner de Matrícula Preu: Plan Full -->
+        <div class="pricing-card-banner">
+          <div class="pricing-card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <h3>Matrícula 2026 - Oferta de Lanzamiento</h3>
+          </div>
+
+          <div class="pricing-card-body">
+            <div class="pricing-col" style="text-align: left; padding-right: 15px;">
+              <h4 class="pricing-plan-title" style="text-align: left;">Plan Full</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: #475569; margin-bottom: 14px;">
+                <li>✔ Competencia Lectora</li>
+                <li>✔ Competencia Matemática (M1 + M2)</li>
+                <li>✔ Ciencias Plan Común</li>
+                <li>✔ 1 Prueba Optativa (Historia o Ciencias)</li>
+              </ul>
+              <div class="pricing-old-price" style="font-size: 1.15rem; margin-bottom: 2px;">Valor Lista: $1.043.000</div>
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--primary-teal);">Paga en 7 cuotas de:</p>
+              <div class="pricing-main-price" style="font-size: 2.3rem;">$149.000</div>
+              <div><span class="cupos-pill-badge">¡Cupos Limitados!</span></div>
+            </div>
+
+            <div class="pricing-col" style="justify-content: center; align-items: center;">
+              <div class="pricing-discount-tag">Descuento Especial</div>
+              <div class="pricing-percentage">25%</div>
+              <span style="font-weight: 800; color: var(--primary-teal); font-size: 1.1rem; text-transform: uppercase;">de Ahorro Total</span>
+              <p style="font-size: 0.85rem; color: #64748b; margin-top: 8px;">Por matrícula anticipada 2026</p>
+            </div>
+          </div>
+
+          <div class="pricing-card-footer">
+            <div class="pricing-footer-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Promoción válida hasta el 30 de julio de 2026</span>
+            </div>
+            <div class="pricing-footer-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              <span>Inscríbete hoy y asegura tu cupo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario Preuniversitario (Corregido: "Completa el formulario", "Teléfono*", "Nivel de estudios*") -->
+        <div class="form-card">
+          <h3 class="form-title">Solicita información</h3>
+          <p class="form-subtitle">
+            Completa el formulario y nuestro equipo de orientación vocacional te contactará a la brevedad.
+          </p>
+
+          <form data-lead-form>
+            <div class="form-group-grid">
+              <div class="form-control-wrap">
+                <label for="preuNombre" class="form-label">Nombre y apellido *</label>
+                <input type="text" id="preuNombre" class="form-input" placeholder="Nombre completo" required>
+              </div>
+              <div class="form-control-wrap">
+                <label for="preuTel" class="form-label">Teléfono *</label>
+                <input type="tel" id="preuTel" class="form-input" placeholder="+56 9 1234 5678" required>
+              </div>
+            </div>
+
+            <div class="form-group-grid">
+              <div class="form-control-wrap">
+                <label for="preuEmail" class="form-label">Email *</label>
+                <input type="email" id="preuEmail" class="form-input" placeholder="correo@ejemplo.cl" required>
+              </div>
+              <div class="form-control-wrap">
+                <label for="preuNivel" class="form-label">Nivel de estudios actual *</label>
+                <select id="preuNivel" class="form-select" required>
+                  <option value="">Selecciona tu situación</option>
+                  <option value="3 Medio">Cursando 3° Medio</option>
+                  <option value="4 Medio">Cursando 4° Medio</option>
+                  <option value="Egresado">Egresado de Enseñanza Media</option>
+                  <option value="Universitario">Preparando cambio de carrera</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-control-wrap">
+              <label for="preuCarrera" class="form-label">Carrera o universidades de interés (opcional)</label>
+              <textarea id="preuCarrera" class="form-textarea" placeholder="Ej: Medicina, Ingeniería Civil, Derecho, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-submit">
+              <span>Quiero más información</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Profesional -->
+  <footer class="site-footer">
+    <div class="container footer-top-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="SurEduca">
+        <p>
+          El primer colegio online y preuniversitario en Chile fundado por profesores. Formando a la nueva generación de profesionales con vocación y excelencia.
+        </p>
+        <span style="display: inline-block; background: rgba(0, 164, 153, 0.2); color: #2dd4bf; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 9999px;">
+          Aprende hoy, construye tu mañana
+        </span>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Preuniversitario</h4>
+        <ul class="footer-links-list">
+          <li><a href="#programa-detalle">Áreas PAES</a></li>
+          <li><a href="#programa-detalle">Metodología en 5 Pasos</a></li>
+          <li><a href="#solicita-informacion">Plan Full 2026</a></li>
+          <li><a href="colegio-online.html">Colegio Online</a></li>
+          <li><a href="cursos.html">Clases Particulares</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Enlaces Útiles</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Página de Inicio</a></li>
+          <li><a href="nosotros.html">Quiénes Somos</a></li>
+          <li><a href="contacto.html">Preguntas Frecuentes</a></li>
+          <li><a href="contacto.html">Canales de Atención</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Atención y Contacto</h4>
+        <div class="footer-contact-info">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Clases 100% online para todo Chile.</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Atención: Lunes a Viernes 08:30 - 19:30</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>preu@sureduca.cl</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom-bar">
+      <div>
+        &copy; 2026 SurEduca. Preuniversitario de Alto Rendimiento. Matrículas 2026.
+      </div>
+      <div>
+        Compromiso pedagógico real para tu ingreso a la educación superior.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/56912345678" target="_blank" class="whatsapp-floating-btn whatsapp-trigger" aria-label="WhatsApp SurEduca">
+    <span class="whatsapp-tooltip">¿Consultas sobre Preuniversitario?</span>
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+  </a>
+
+  <!-- Modal Interactivo -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Matrícula Preuniversitario 2026</h3>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form data-lead-form>
+          <div class="form-control-wrap">
+            <label class="form-label">Nombre y apellido *</label>
+            <input type="text" class="form-input" placeholder="Nombre completo" required>
+          </div>
+          <div class="form-group-grid">
+            <div class="form-control-wrap">
+              <label class="form-label">Teléfono / WhatsApp *</label>
+              <input type="tel" class="form-input" placeholder="+56 9..." required>
+            </div>
+            <div class="form-control-wrap">
+              <label class="form-label">Email *</label>
+              <input type="email" class="form-input" placeholder="correo@ejemplo.cl" required>
+            </div>
+          </div>
+          <div class="form-control-wrap">
+            <label class="form-label">Plan PAES de interés *</label>
+            <select class="form-select" id="modalProgramSelect" required>
+              <option value="Plan Full PAES" selected>Plan Full PAES (25% descuento)</option>
+              <option value="Plan Matematicas">Plan Intensivo Matemáticas (M1 + M2)</option>
+              <option value="Plan Lenguaje">Plan Competencia Lectora</option>
+              <option value="Plan Ciencias">Plan Ciencias (Biología, Física, Química)</option>
+              <option value="Plan Historia">Plan Historia y Ciencias Sociales</option>
+            </select>
+          </div>
+          <div class="form-control-wrap">
+            <label class="form-label">Carrera a la que aspiras ingresar</label>
+            <textarea class="form-textarea" placeholder="Ej: Medicina en la U. de Chile, Ingeniería, Derecho..."></textarea>
+          </div>
+          <button type="submit" class="btn-form-submit">
+            <span>Asegurar cupo de preuniversitario</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
