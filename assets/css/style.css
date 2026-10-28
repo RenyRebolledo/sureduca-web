@@ -463,18 +463,20 @@ button, input, select, textarea {
 }
 
 .badge-mineduc-floating {
-  bottom: 30px;
-  right: 15px;
-  width: 130px;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.22));
+  bottom: 120px;
+  right: 120px;
+  width: 145px;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.25));
+  z-index: 4;
 }
 
 .badge-buho-floating {
-  bottom: -15px;
-  left: 20px;
-  width: 145px;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.22));
+  bottom: -25px;
+  right: 5px;
+  width: 165px;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.25));
   animation: floatSlow 3.5s ease-in-out infinite reverse;
+  z-index: 5;
 }
 
 @keyframes floatSlow {
