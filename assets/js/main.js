@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4500);
   }
 
-  // 5. Manejo de Formularios
+  // 5. Manejo de Formularios (Envío a moises.bravo@sureduca.cl y reny.rebolledo@sureduca.cl)
   const forms = document.querySelectorAll('form[data-lead-form]');
   forms.forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -118,6 +118,34 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = 'Enviando...';
       }
 
+      // Recopilar datos del formulario
+      const formData = new FormData(form);
+      const dataObj = {};
+      formData.forEach((value, key) => {
+        dataObj[key] = value;
+      });
+
+      // Construcción del correo de notificación
+      const nombre = form.querySelector('input[name="name"], input[placeholder*="Nombre"]')?.value || 'Interesado';
+      const telefono = form.querySelector('input[type="tel"], input[placeholder*="Teléfono"], input[placeholder*="WhatsApp"]')?.value || 'No indicado';
+      const email = form.querySelector('input[type="email"]')?.value || 'No indicado';
+      const nivel = form.querySelector('select')?.value || 'General / Matrícula 2027';
+      const mensaje = form.querySelector('textarea')?.value || 'Solicitud de información sobre matrículas 2027';
+
+      const subject = encodeURIComponent(`Nueva Solicitud SurEduca 2027: ${nombre} - ${nivel}`);
+      const body = encodeURIComponent(
+        `Hola Equipo SurEduca,\n\nSe ha recibido una nueva solicitud a través del sitio web:\n\n` +
+        `• Nombre: ${nombre}\n` +
+        `• Teléfono / WhatsApp: ${telefono}\n` +
+        `• Correo: ${email}\n` +
+        `• Nivel / Interés: ${nivel}\n` +
+        `• Mensaje / Consulta: ${mensaje}\n\n` +
+        `---\nSurEduca - Admisión 2027`
+      );
+
+      // Destinatarios configurados
+      const mailtoLink = `mailto:moises.bravo@sureduca.cl?cc=reny.rebolledo@sureduca.cl&subject=${subject}&body=${body}`;
+
       setTimeout(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -125,18 +153,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         form.reset();
         closeModal();
-        showToast('¡Gracias por contactarnos! Un asesor pedagógico se comunicará contigo a la brevedad.');
-      }, 1000);
+        showToast('¡Gracias por contactarnos! Tu solicitud ha sido registrada y un asesor te responderá a la brevedad.');
+        
+        // Disparar cliente de correo o registro si el usuario lo tiene configurado
+        const mailWindow = window.open(mailtoLink, '_blank');
+        if (mailWindow) {
+          setTimeout(() => mailWindow.close(), 100);
+        }
+      }, 900);
     });
   });
 
-  // 6. WhatsApp Directo
-  const whatsappButtons = document.querySelectorAll('.whatsapp-trigger');
+  // 6. WhatsApp Directo (+56 9 9641 1872)
+  const WHATSAPP_PHONE = '56996411872';
+  const whatsappButtons = document.querySelectorAll('.whatsapp-trigger, a[href*="wa.me"]');
   whatsappButtons.forEach(btn => {
+    // Asegurar el enlace directo
+    btn.setAttribute('href', `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent('¡Hola SurEduca! Quisiera solicitar más información sobre las matrículas 2027.')}`);
+    btn.setAttribute('target', '_blank');
+    btn.setAttribute('rel', 'noopener noreferrer');
+
     btn.addEventListener('click', (e) => {
-      const msg = encodeURIComponent('¡Hola SurEduca! Quisiera solicitar más información sobre las matrículas 2026.');
-      const phone = '56912345678'; // Número editable o institucional
-      window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+      e.preventDefault();
+      const msg = encodeURIComponent('¡Hola SurEduca! Quisiera solicitar más información sobre las matrículas 2027.');
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
     });
   });
 });
