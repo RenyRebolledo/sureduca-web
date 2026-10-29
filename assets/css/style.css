@@ -1606,10 +1606,13 @@ button, input, select, textarea {
 }
 
 .footer-brand img {
-  height: 52px;
+  height: 56px;
   width: auto;
   margin-bottom: 16px;
-  filter: brightness(0) invert(1);
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
 }
 
 .footer-brand p {
@@ -1982,5 +1985,48 @@ button, input, select, textarea {
   
   .footer-top-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Ajustes móviles para banner de resultados y estadísticas */
+  .stats-banner-section {
+    padding: 32px 16px;
+    margin-bottom: 40px;
+  }
+
+  .stats-left-col h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .stats-three-items {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .stat-item-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    justify-content: flex-start;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  /* Preuniversitario barra de beneficios en móvil */
+  .preu-benefits-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px 16px;
+  }
+
+  .preu-col-card {
+    padding: 24px 16px;
   }
 }

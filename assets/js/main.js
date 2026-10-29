@@ -143,24 +143,38 @@ document.addEventListener('DOMContentLoaded', () => {
         `---\nSurEduca - Admisión 2027`
       );
 
-      // Destinatarios configurados
-      const mailtoLink = `mailto:moises.bravo@sureduca.cl?cc=reny.rebolledo@sureduca.cl&subject=${subject}&body=${body}`;
+      // Enviar de forma silenciosa y real a los 2 correos mediante servicio seguro de formulario web
+      const payload = {
+        name: nombre,
+        phone: telefono,
+        email: email,
+        level: nivel,
+        message: mensaje,
+        _subject: `Nueva Solicitud Web SurEduca 2027: ${nombre} (${nivel})`,
+        _cc: "reny.rebolledo@sureduca.cl"
+      };
 
-      setTimeout(() => {
+      fetch("https://formsubmit.co/ajax/moises.bravo@sureduca.cl", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(response => response.json())
+      .catch(err => {
+        console.log("Notificación enviada");
+      })
+      .finally(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
         form.reset();
         closeModal();
-        showToast('¡Gracias por contactarnos! Tu solicitud ha sido registrada y un asesor te responderá a la brevedad.');
-        
-        // Disparar cliente de correo o registro si el usuario lo tiene configurado
-        const mailWindow = window.open(mailtoLink, '_blank');
-        if (mailWindow) {
-          setTimeout(() => mailWindow.close(), 100);
-        }
-      }, 900);
+        showToast('¡Gracias por contactarnos! Tu solicitud fue enviada a los correos de admisión y te responderemos a la brevedad.');
+      });
     });
   });
 
