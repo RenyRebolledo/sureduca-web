@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrector de Pruebas | SurEduca - Lectura Óptica para Colegios en Chile</title>
+  <meta name="description" content="Corrige las pruebas de todo un curso en minutos con lectura óptica. Escala chilena de 1,0 a 7,0, informes por pregunta y objetivo de aprendizaje para UTP, SIMCE y PAES.">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-notice-bar">
+    <div class="container top-notice-inner">
+      <div class="top-notice-text">
+        <span class="top-notice-badge">Corrector de Pruebas · Lectura Óptica</span>
+        <span>Corrige un curso completo en minutos, con escala 1,0 a 7,0 e informes UTP.</span>
+      </div>
+      <div class="top-notice-actions">
+        <a href="#demo-corrector" class="btn-top-cta" data-open-modal data-program="Corrector de Pruebas">
+          Agenda una Demostración
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="https://wa.me/56996411872" target="_blank" class="btn-top-whatsapp whatsapp-trigger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo.png" alt="SurEduca Corrector de Pruebas">
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="colegio-online.html" class="nav-link">Colegio Online</a></li>
+          <li><a href="preuniversitario.html" class="nav-link">PreUniversitario</a></li>
+          <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+          <li><a href="servicios.html" class="nav-link active">Servicios</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-matricula" data-open-modal data-program="Corrector de Pruebas">
+          Pedir Demostración
+        </button>
+      </div>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Corrector de Pruebas -->
+  <section class="hero-section">
+    <div class="hero-curved-bg"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge-tag">Lectura óptica para colegios en Chile</span>
+        <h1 class="hero-title">
+          Corrige las pruebas de todo un curso en <span class="teal-text">minutos</span>, <br>
+          no en fines de semana.
+        </h1>
+        <p class="hero-description">
+          Imprime las hojas de respuesta, aplica la prueba y escanéalas. Obtienes la nota de cada estudiante en escala 1,0 a 7,0 y un informe por pregunta y objetivo de aprendizaje, listo para UTP.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+          <span class="level-pill-tag pill-teal">A · B · C · D · E (hasta 5 alternativas)</span>
+          <span class="level-pill-tag pill-teal">1,0 – 7,0 (exigencia ajustable)</span>
+          <span class="level-pill-tag pill-teal">Informes Excel por curso</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <button type="button" class="btn-primary" data-open-modal data-program="Corrector de Pruebas - Demo">
+            <span>Agenda una demostración gratis</span>
+          </button>
+          <a href="#calculadora-escala" class="btn-secondary-outline">
+            Calcular escala de notas
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta visual de ejemplo de hoja corregida -->
+      <div class="hero-image-wrapper">
+        <div class="feature-box-card" style="width: 100%; max-width: 440px; border: 2px solid var(--primary-teal); text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #edf2f7; padding-bottom: 14px; margin-bottom: 16px;">
+            <div>
+              <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 800; color: var(--primary-teal); letter-spacing: 0.04em;">Hoja de Respuesta Procesada</span>
+              <h3 style="margin: 4px 0 0; font-size: 1.3rem; color: var(--primary-navy);">Valentina R.</h3>
+              <p style="margin: 2px 0 0; font-size: 0.9rem; color: #64748b;">8° Básico B · Ciencias · Forma A (20 preg.)</p>
+            </div>
+            <div style="background: #ecfdf5; border: 2px solid var(--primary-teal); border-radius: 14px; padding: 10px 16px; text-align: center;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: #0f766e;">NOTA</div>
+              <div style="font-size: 2rem; font-weight: 900; color: #0d2744; line-height: 1.1;">5,9</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.92rem; color: #334155; margin-bottom: 14px;">
+            <span><strong>Puntaje:</strong> 17 / 20</span>
+            <span><strong>Exigencia:</strong> 60%</span>
+          </div>
+
+          <div style="background: #f8fafc; padding: 12px 14px; border-radius: 10px; font-size: 0.85rem; color: #475569;">
+            <strong>Sirve para:</strong> Pruebas de unidad · Ensayos SIMCE · Ensayos PAES · Evaluaciones diagnósticas · Encuestas
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona (4 pasos) -->
+  <section class="formation-section" id="como-funciona">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 42px;">
+        <span class="section-header-pill">CÓMO FUNCIONA</span>
+        <h2 class="section-title">Cuatro pasos desde la pauta hasta el informe</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          No necesitas comprar hojas especiales. Las imprimes en el colegio, con el nombre de cada estudiante ya escrito.
+        </p>
+      </div>
+
+      <div class="postulation-steps-grid">
+        <div class="postulation-step-item">
+          <div class="step-number-circle">1</div>
+          <div class="step-arrow"></div>
+          <h4 class="step-title">Carga la pauta</h4>
+          <p class="step-desc">Ingresa las respuestas correctas o impórtalas desde Excel. Asocia cada pregunta a su eje u objetivo de aprendizaje.</p>
+        </div>
+
+        <div class="postulation-step-item">
+          <div class="step-number-circle">2</div>
+          <div class="step-arrow"></div>
+          <h4 class="step-title">Imprime las hojas</h4>
+          <p class="step-desc">Hojas personalizadas con el logo del colegio y los datos del estudiante, en cualquier impresora.</p>
+        </div>
+
+        <div class="postulation-step-item">
+          <div class="step-number-circle">3</div>
+          <div class="step-arrow"></div>
+          <h4 class="step-title">Escanea</h4>
+          <p class="step-desc">Pasa las hojas por el escáner. El sistema lee las marcas, detecta dobles respuestas y preguntas en blanco.</p>
+        </div>
+
+        <div class="postulation-step-item">
+          <div class="step-number-circle">4</div>
+          <h4 class="step-title">Revisa los resultados</h4>
+          <p class="step-desc">Notas, porcentaje de logro por pregunta y por objetivo, y ranking del curso, exportables a Excel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios (6 cards) -->
+  <section class="two-cols-feature-section" id="beneficios">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 42px;">
+        <span class="section-header-pill">BENEFICIOS</span>
+        <h2 class="section-title">Más tiempo para enseñar, menos tiempo corrigiendo</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          Pensado para docentes, jefes de UTP y equipos de evaluación que necesitan datos confiables rápido.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card">
+          <h3 class="program-card-title">Resultados el mismo día</h3>
+          <p class="program-card-desc">Entrega notas a tus estudiantes en la clase siguiente, sin acumular pruebas por corregir.</p>
+        </div>
+        <div class="program-card">
+          <h3 class="program-card-title">Informes para UTP</h3>
+          <p class="program-card-desc">Logro por pregunta, por eje y por objetivo de aprendizaje. Detecta qué contenidos reforzar.</p>
+        </div>
+        <div class="program-card">
+          <h3 class="program-card-title">Sin errores de transcripción</h3>
+          <p class="program-card-desc">La lectura óptica elimina el conteo manual y el traspaso de notas a planillas.</p>
+        </div>
+        <div class="program-card">
+          <h3 class="program-card-title">Hojas a tu medida</h3>
+          <p class="program-card-desc">De 1 a 100 preguntas, varias formas por prueba (A, B, C) y preguntas de desarrollo con puntaje manual.</p>
+        </div>
+        <div class="program-card">
+          <h3 class="program-card-title">Escala chilena incluida</h3>
+          <p class="program-card-desc">Notas de 1,0 a 7,0 con el porcentaje de exigencia que defina tu colegio.</p>
+        </div>
+        <div class="program-card">
+          <h3 class="program-card-title">Soporte cercano</h3>
+          <p class="program-card-desc">Capacitación para tu equipo y ayuda por WhatsApp, teléfono y correo cuando la necesites.</p>
+        </div>
+      </div>
+
+      <!-- Para quién -->
+      <div style="text-align: center; margin: 64px 0 32px;">
+        <span class="section-header-pill">PARA QUIÉN</span>
+        <h2 class="section-title">Para cualquier institución que evalúe con alternativas</h2>
+      </div>
+
+      <div class="temario-grid">
+        <div class="subject-card">
+          <h3 style="margin: 0; color: var(--primary-navy);">Colegios y liceos</h3>
+          <p style="margin: 0; color: #475569;">Pruebas de unidad, coeficiente 2 y ensayos SIMCE para todos los niveles.</p>
+        </div>
+        <div class="subject-card">
+          <h3 style="margin: 0; color: var(--primary-navy);">Preuniversitarios</h3>
+          <p style="margin: 0; color: #475569;">Ensayos PAES masivos con puntaje por prueba y seguimiento de cada estudiante.</p>
+        </div>
+        <div class="subject-card">
+          <h3 style="margin: 0; color: var(--primary-navy);">Universidades e institutos</h3>
+          <p style="margin: 0; color: #475569;">Exámenes de cátedra y evaluaciones diagnósticas para cursos numerosos.</p>
+        </div>
+        <div class="subject-card">
+          <h3 style="margin: 0; color: var(--primary-navy);">Sostenedores y DAEM</h3>
+          <p style="margin: 0; color: #475569;">Evaluaciones comunales con resultados comparables entre establecimientos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Herramienta gratuita: Calculadora de Escala de Notas -->
+  <section class="formation-section" id="calculadora-escala">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto;">
+        <div class="form-card">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <span class="section-header-pill">HERRAMIENTA GRATUITA</span>
+            <h2 class="form-title" style="margin-top: 8px;">Calcula tu escala de notas</h2>
+            <p class="form-subtitle">
+              Ingresa el puntaje máximo, la exigencia y el puntaje obtenido. Es la misma escala que el corrector aplica automáticamente a cada hoja.
+            </p>
+          </div>
+
+          <div class="form-group-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="form-control-wrap">
+              <label for="calcMax" class="form-label">Puntaje máximo</label>
+              <input type="number" id="calcMax" class="form-input" value="40" min="1" step="1">
+            </div>
+            <div class="form-control-wrap">
+              <label for="calcExig" class="form-label">Exigencia (%)</label>
+              <input type="number" id="calcExig" class="form-input" value="60" min="1" max="99" step="1">
+            </div>
+            <div class="form-control-wrap">
+              <label for="calcObt" class="form-label">Puntaje obtenido</label>
+              <input type="number" id="calcObt" class="form-input" value="30" min="0" step="0.5">
+            </div>
+          </div>
+
+          <div id="calcResultBox" style="margin-top: 20px; background: #f0fdfa; border: 2px solid var(--primary-teal); border-radius: 14px; padding: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+            <div>
+              <div id="calcStatus" style="font-weight: 800; font-size: 1rem; color: #0f766e;">Aprobado</div>
+              <div id="calcCutoff" style="font-size: 0.9rem; color: #475569;">Aprueba con 24 puntos</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Nota Final</div>
+              <div id="calcGrade" style="font-size: 2.6rem; font-weight: 900; color: #0d2744; line-height: 1;">5,3</div>
+            </div>
+          </div>
+          <p style="font-size: 0.82rem; color: #64748b; margin-top: 12px; text-align: center;">
+            Fórmula usada: bajo el puntaje de aprobación, la nota sube de 1,0 a 4,0; sobre él, de 4,0 a 7,0. Las notas se redondean a un decimal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="two-cols-feature-section" id="planes-corrector">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 42px;">
+        <span class="section-header-pill">PLANES</span>
+        <h2 class="section-title">Elige el plan según el tamaño de tu institución</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          Todos los planes incluyen capacitación inicial y soporte. Te enviamos una cotización a la medida en menos de 24 horas hábiles.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-header">
+            <div>
+              <h3 class="program-card-title">Docente</h3>
+              <span class="program-badge-sub">Precio a consultar</span>
+            </div>
+          </div>
+          <p class="program-card-desc">Para un profesor o un departamento de asignatura.</p>
+          <ul class="program-checklist">
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Pruebas y preguntas ilimitadas</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Hojas personalizadas</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Notas en escala 1,0 a 7,0</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Exportación a Excel</li>
+          </ul>
+          <button type="button" class="btn-card-action" data-open-modal data-program="Corrector de Pruebas - Plan Docente">
+            <span>Cotizar plan Docente</span>
+          </button>
+        </div>
+
+        <div class="program-card" style="border: 2px solid var(--primary-teal);">
+          <div class="program-header">
+            <div>
+              <span class="cupos-pill-badge" style="margin-bottom: 6px; display: inline-block;">Más elegido</span>
+              <h3 class="program-card-title">Colegio</h3>
+              <span class="program-badge-sub">Precio a consultar</span>
+            </div>
+          </div>
+          <p class="program-card-desc">Para todo el establecimiento, de prekínder a 4° medio.</p>
+          <ul class="program-checklist">
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Todo lo del plan Docente</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Usuarios para todos los docentes</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Informes por eje y objetivo para UTP</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Ensayos SIMCE, PAES y capacitación al equipo</li>
+          </ul>
+          <button type="button" class="btn-card-action" data-open-modal data-program="Corrector de Pruebas - Plan Colegio">
+            <span>Cotizar plan Colegio</span>
+          </button>
+        </div>
+
+        <div class="program-card">
+          <div class="program-header">
+            <div>
+              <h3 class="program-card-title">Institucional</h3>
+              <span class="program-badge-sub">Precio a consultar</span>
+            </div>
+          </div>
+          <p class="program-card-desc">Para redes de colegios, DAEM, preuniversitarios y universidades.</p>
+          <ul class="program-checklist">
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Todo lo del plan Colegio</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Varios establecimientos</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Informes comparativos y escáner opcional</li>
+            <li class="program-check-item"><span class="check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Soporte prioritario</li>
+          </ul>
+          <button type="button" class="btn-card-action" data-open-modal data-program="Corrector de Pruebas - Plan Institucional">
+            <span>Cotizar plan Institucional</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes y Demostración -->
+  <section class="pricing-and-form-section" id="demo-corrector">
+    <div class="container">
+      <div class="pricing-form-grid">
+        <div class="feature-box-card" style="height: 100%;">
+          <div class="feature-box-content">
+            <span class="section-header-pill">PREGUNTAS FRECUENTES</span>
+            <h3 style="font-size: 1.7rem; margin-top: 8px; margin-bottom: 18px;">Lo que nos preguntan los colegios</h3>
+            <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.94rem; color: #334155;">
+              <div>
+                <strong>¿Necesito comprar hojas de respuesta especiales?</strong><br>
+                No. Las hojas se imprimen en papel normal con cualquier impresora del colegio.
+              </div>
+              <div>
+                <strong>¿Qué escáner necesito?</strong><br>
+                Funciona con escáneres de documentos con alimentador automático. Si no tienes uno, te recomendamos un modelo y podemos incluirlo en tu plan.
+              </div>
+              <div>
+                <strong>¿Qué pasa si un estudiante marca dos alternativas o borra mal?</strong><br>
+                El sistema detecta las dobles marcas y las preguntas en blanco, y te las muestra para que decidas antes de calcular la nota.
+              </div>
+              <div>
+                <strong>¿Puedo incluir preguntas de desarrollo?</strong><br>
+                Sí. Puedes agregar preguntas con puntaje manual en la misma hoja, y se suman al puntaje total.
+              </div>
+              <div>
+                <strong>¿Cómo es la capacitación?</strong><br>
+                Hacemos una sesión en línea con tu equipo y quedamos disponibles por WhatsApp y correo para resolver dudas.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3 class="form-title">Agenda una demostración gratuita</h3>
+          <p class="form-subtitle">Te mostramos en 20 minutos cómo corregir una prueba real de tu colegio.</p>
+
+          <form data-lead-form>
+            <div class="form-group-grid">
+              <div class="form-control-wrap">
+                <label class="form-label">Nombre y cargo *</label>
+                <input type="text" name="nombre" class="form-input" placeholder="Nombre y cargo" required>
+              </div>
+              <div class="form-control-wrap">
+                <label class="form-label">Celular / WhatsApp *</label>
+                <input type="tel" name="telefono" class="form-input" placeholder="+56 9..." required>
+              </div>
+            </div>
+
+            <div class="form-group-grid">
+              <div class="form-control-wrap">
+                <label class="form-label">Email *</label>
+                <input type="email" name="email" class="form-input" placeholder="correo@colegio.cl" required>
+              </div>
+              <div class="form-control-wrap">
+                <label class="form-label">Plan de interés *</label>
+                <select class="form-select" name="programa" required>
+                  <option value="Corrector de Pruebas - Plan Docente">Plan Docente</option>
+                  <option value="Corrector de Pruebas - Plan Colegio" selected>Plan Colegio</option>
+                  <option value="Corrector de Pruebas - Plan Institucional">Plan Institucional</option>
+                  <option value="Corrector de Pruebas - Demostración">Aún no sé / Demostración</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-control-wrap">
+              <label class="form-label">Institución y mensaje</label>
+              <textarea class="form-textarea" name="mensaje" placeholder="Indícanos el nombre de tu establecimiento y cuándo te acomoda la demostración."></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-submit">
+              <span>Agendar Demostración Gratis</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="SurEduca">
+        <p>El primer colegio online en Chile fundado por profesores. Soluciones tecnológicas y pedagógicas para instituciones educativas.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Navegación</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios para Colegios</a></li>
+          <li><a href="colegio-online.html">Colegio Online</a></li>
+          <li><a href="preuniversitario.html">Preuniversitario PAES</a></li>
+          <li><a href="cursos.html">Cursos y Clases</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contacto</h4>
+        <div class="footer-contact-info">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>colegio@sureduca.cl</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Lunes a Viernes: 08:30 - 19:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom-bar">
+      <div>&copy; 2027 SurEduca. Corrector de Pruebas con Lectura Óptica.</div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flotante -->
+  <a href="https://wa.me/56996411872" target="_blank" class="whatsapp-floating-btn whatsapp-trigger" aria-label="WhatsApp SurEduca">
+    <span class="whatsapp-tooltip">¿Consultas sobre el Corrector?</span>
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  </a>
+
+  <!-- Modal Interactivo -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Cotizar Corrector de Pruebas</h3>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form data-lead-form>
+          <div class="form-control-wrap">
+            <label class="form-label">Nombre y cargo *</label>
+            <input type="text" name="nombre" class="form-input" placeholder="Nombre completo" required>
+          </div>
+          <div class="form-group-grid">
+            <div class="form-control-wrap">
+              <label class="form-label">Teléfono *</label>
+              <input type="tel" name="telefono" class="form-input" placeholder="+56 9..." required>
+            </div>
+            <div class="form-control-wrap">
+              <label class="form-label">Email *</label>
+              <input type="email" name="email" class="form-input" placeholder="correo@colegio.cl" required>
+            </div>
+          </div>
+          <div class="form-control-wrap">
+            <label class="form-label">Plan de interés *</label>
+            <select class="form-select" id="modalProgramSelect" name="programa" required>
+              <option value="Corrector de Pruebas - Demo">Agendar Demostración Gratis</option>
+              <option value="Corrector de Pruebas - Plan Docente">Plan Docente</option>
+              <option value="Corrector de Pruebas - Plan Colegio">Plan Colegio</option>
+              <option value="Corrector de Pruebas - Plan Institucional">Plan Institucional</option>
+            </select>
+          </div>
+          <div class="form-control-wrap">
+            <label class="form-label">Institución y comentarios</label>
+            <input type="text" name="mensaje" class="form-input" placeholder="Nombre del establecimiento...">
+          </div>
+          <button type="submit" class="btn-form-submit">
+            <span>Enviar Solicitud</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function() {
+      const maxEl = document.getElementById('calcMax');
+      const exigEl = document.getElementById('calcExig');
+      const obtEl = document.getElementById('calcObt');
+      const gradeEl = document.getElementById('calcGrade');
+      const statusEl = document.getElementById('calcStatus');
+      const cutoffEl = document.getElementById('calcCutoff');
+
+      function updateGrade() {
+        const max = Math.max(1, parseFloat(maxEl.value) || 40);
+        const exig = Math.min(99, Math.max(1, parseFloat(exigEl.value) || 60));
+        const obt = Math.min(max, Math.max(0, parseFloat(obtEl.value) || 0));
+        const cutoff = max * (exig / 100);
+
+        let grade;
+        if (obt < cutoff) {
+          grade = 1.0 + 3.0 * (obt / cutoff);
+        } else {
+          grade = 4.0 + 3.0 * ((obt - cutoff) / (max - cutoff));
+        }
+        const rounded = Math.round(grade * 10) / 10;
+        gradeEl.textContent = rounded.toFixed(1).replace('.', ',');
+        cutoffEl.textContent = `Aprueba con ${Number.isInteger(cutoff) ? cutoff : cutoff.toFixed(1).replace('.', ',')} puntos`;
+
+        if (rounded >= 4.0) {
+          statusEl.textContent = 'Aprobado';
+          statusEl.style.color = '#0f766e';
+        } else {
+          statusEl.textContent = 'Reprobado';
+          statusEl.style.color = '#dc2626';
+        }
+      }
+
+      [maxEl, exigEl, obtEl].forEach(el => el?.addEventListener('input', updateGrade));
+      updateGrade();
+    })();
+  </script>
+</body>
+</html>
