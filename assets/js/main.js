@@ -109,17 +109,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5500);
   }
 
-  // 5. Manejo de Formularios (Envío a reny.rebolledo@sureduca.cl y moises.bravo@sureduca.cl + Confirmación al postulante)
+  // 5. Manejo de Formularios (Envío tradicional a FormSubmit para habilitar _autoresponse al cliente)
+  if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+    showToast('¡Solicitud enviada con éxito! Te hemos enviado un correo de confirmación.', 'success');
+    const cleanUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+
   const forms = document.querySelectorAll('form[data-lead-form]');
   forms.forEach(form => {
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.innerHTML : 'Enviar';
 
+      if (window.location.protocol === 'file:') {
+        showToast('Para probar envíos reales debes abrir la web a través de un servidor (Live Server, localhost o Vercel).', 'warning');
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Enviando...';
+        submitBtn.innerHTML = 'Redirigiendo...';
       }
 
       // Recopilar datos del formulario con selectores flexibles
@@ -127,10 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const telefono = form.querySelector('input[type="tel"], input[name="phone"], input[name="telefono"], input[placeholder*="Teléfono"], input[placeholder*="WhatsApp"]')?.value?.trim() || 'No indicado';
       const email = form.querySelector('input[type="email"], input[name="email"]')?.value?.trim() || '';
       const nivel = form.querySelector('select')?.value || 'General / Matrícula 2027';
-      const mensaje = form.querySelector('textarea')?.value?.trim() || 'Solicitud de información sobre matrículas 2027';
+      const mensaje = form.querySelector('textarea, input[name="mensaje"]')?.value?.trim() || 'Solicitud de información sobre matrículas 2027';
 
       // Mensaje cordial de auto-respuesta enviado automáticamente al correo del solicitante
-      const autoResponseText = 
+      const autoResponseText =
 `Estimado(a) ${nombre},
 
 ¡Muchas gracias por tu interés en SurEduca!
@@ -147,17 +157,24 @@ Uno de nuestros coordinadores pedagógicos revisará tu solicitud y se pondrá e
 
 Si deseas comunicarte de inmediato con nosotros:
 • WhatsApp Oficial Admisiones: +56 9 9641 1872
-• Sitio Web: https://sureduca.cl
+• Sitio Web: https://www.sureduca.cl
 
 Atentamente,
 Equipo de Admisión y Matrículas 2027
 Fundación Educacional SurEduca Chile`;
 
-      // Payload organizado para FormSubmit
-      const payload = {
+      const returnUrl = window.location.href.split('?')[0].split('#')[0] + '?enviado=1';
+
+      // Envío POST tradicional (requerido por FormSubmit para que funcione _autoresponse)
+      const hiddenForm = document.createElement('form');
+      hiddenForm.method = 'POST';
+      hiddenForm.action = 'https://formsubmit.co/reny.rebolledo@sureduca.cl';
+      hiddenForm.style.display = 'none';
+
+      const fields = {
         "Nombre del Solicitante": nombre,
         "Teléfono / WhatsApp": telefono,
-        "Correo Electrónico": email,
+        "email": email,
         "Programa o Nivel de Interés": nivel,
         "Mensaje o Consulta": mensaje,
         "Fecha de Envío": new Date().toLocaleString('es-CL'),
@@ -165,44 +182,20 @@ Fundación Educacional SurEduca Chile`;
         "_cc": "moises.bravo@sureduca.cl",
         "_replyto": email,
         "_template": "table",
-        "_captcha": "false",
+        "_next": returnUrl,
         "_autoresponse": autoResponseText
       };
 
-      try {
-        const response = await fetch("https://formsubmit.co/ajax/reny.rebolledo@sureduca.cl", {
-          method: "POST",
-          headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
+      Object.entries(fields).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        hiddenForm.appendChild(input);
+      });
 
-        const result = await response.json().catch(() => ({}));
-
-        if (response.ok && (result.success === true || result.success === "true")) {
-          showToast('¡Solicitud enviada con éxito! Te hemos enviado un correo de confirmación y te contactaremos prontamente.', 'success');
-          form.reset();
-          closeModal();
-        } else if (result.message && result.message.includes('Activation')) {
-          console.warn("FormSubmit requiere activación:", result.message);
-          showToast('Formulario pendiente de activación: Revisa el correo de confirmación de FormSubmit en tu bandeja.', 'warning');
-        } else if (window.location.protocol === 'file:') {
-          console.warn("Aviso de seguridad del navegador: FormSubmit no admite envío desde archivos locales file://.");
-          showToast('Para probar envíos reales debes abrir la web a través de un servidor (Live Server, localhost o Vercel).', 'warning');
-        } else {
-          showToast(result.message || 'No se pudo completar el envío. Por favor contáctanos directo a WhatsApp.', 'error');
-        }
-      } catch (err) {
-        console.error("Error al enviar formulario:", err);
-        showToast('Error de conexión al enviar. Puedes escribirnos directo al WhatsApp +56 9 9641 1872.', 'error');
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        }
-      }
+      document.body.appendChild(hiddenForm);
+      hiddenForm.submit();
     });
   });
 
