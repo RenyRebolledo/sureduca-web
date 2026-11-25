@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -306,7 +306,7 @@
 
     <!-- Resultados que nos Respaldan (8.jpg) -->
     <section class="stats-banner-section">
-      <div class="container stats-grid-wrapper">
+      <div class="container stats-grid-wrapper stats-single-col">
         <div class="stats-left-col">
           <h3>Resultados que nos respaldan</h3>
           <div class="stats-three-items">
@@ -358,16 +358,6 @@
             </div>
           </div>
         </div>
-
-        <div class="testimonial-preview-card">
-          <div class="testimonial-quote-icon">“</div>
-          <div>
-            <p class="testimonial-text">
-              "Gracias a SurEduca logré ingresar a la universidad que siempre soñé. Las clases, los docentes y el acompañamiento fueron clave en mi preparación."
-            </p>
-            <div class="testimonial-author">— Valeria R., Ingreso a Medicina PUC</div>
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -416,7 +406,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>Promoción válida hasta el 30 de julio de 2027</span>
+              <span>Promoción válida hasta el 31 de diciembre de 2027</span>
             </div>
             <div class="pricing-footer-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -438,22 +428,22 @@
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label for="preuNombre" class="form-label">Nombre y apellido *</label>
-                <input type="text" id="preuNombre" class="form-input" placeholder="Nombre completo" required>
+                <input type="text" id="preuNombre" name="nombre" class="form-input" placeholder="Nombre completo" required>
               </div>
               <div class="form-control-wrap">
                 <label for="preuTel" class="form-label">Teléfono *</label>
-                <input type="tel" id="preuTel" class="form-input" placeholder="+56 9 9641 1872" required>
+                <input type="tel" id="preuTel" name="telefono" class="form-input" placeholder="+56 9 9641 1872" required>
               </div>
             </div>
 
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label for="preuEmail" class="form-label">Email *</label>
-                <input type="email" id="preuEmail" class="form-input" placeholder="correo@ejemplo.cl" required>
+                <input type="email" id="preuEmail" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
               </div>
               <div class="form-control-wrap">
                 <label for="preuNivel" class="form-label">Nivel de estudios actual *</label>
-                <select id="preuNivel" class="form-select" required>
+                <select id="preuNivel" name="programa" class="form-select" required>
                   <option value="">Selecciona tu situación</option>
                   <option value="3 Medio">Cursando 3° Medio</option>
                   <option value="4 Medio">Cursando 4° Medio</option>
@@ -465,7 +455,7 @@
 
             <div class="form-control-wrap">
               <label for="preuCarrera" class="form-label">Carrera o universidades de interés (opcional)</label>
-              <textarea id="preuCarrera" class="form-textarea" placeholder="Ej: Medicina, Ingeniería Civil, Derecho, etc."></textarea>
+              <textarea id="preuCarrera" name="mensaje" class="form-textarea" placeholder="Ej: Medicina, Ingeniería Civil, Derecho, etc."></textarea>
             </div>
 
             <button type="submit" class="btn-form-submit">
@@ -563,21 +553,21 @@
         <form data-lead-form>
           <div class="form-control-wrap">
             <label class="form-label">Nombre y apellido *</label>
-            <input type="text" class="form-input" placeholder="Nombre completo" required>
+            <input type="text" name="nombre" class="form-input" placeholder="Nombre completo" required>
           </div>
           <div class="form-group-grid">
             <div class="form-control-wrap">
               <label class="form-label">Teléfono / WhatsApp *</label>
-              <input type="tel" class="form-input" placeholder="+56 9..." required>
+              <input type="tel" name="telefono" class="form-input" placeholder="+56 9..." required>
             </div>
             <div class="form-control-wrap">
               <label class="form-label">Email *</label>
-              <input type="email" class="form-input" placeholder="correo@ejemplo.cl" required>
+              <input type="email" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
             </div>
           </div>
           <div class="form-control-wrap">
             <label class="form-label">Plan PAES de interés *</label>
-            <select class="form-select" id="modalProgramSelect" required>
+            <select class="form-select" id="modalProgramSelect" name="programa" required>
               <option value="Plan Full PAES" selected>Plan Full PAES (25% descuento)</option>
               <option value="Plan Matematicas">Plan Intensivo Matemáticas (M1 + M2)</option>
               <option value="Plan Lenguaje">Plan Competencia Lectora</option>
@@ -587,7 +577,7 @@
           </div>
           <div class="form-control-wrap">
             <label class="form-label">Carrera a la que aspiras ingresar</label>
-            <textarea class="form-textarea" placeholder="Ej: Medicina en la U. de Chile, Ingeniería, Derecho..."></textarea>
+            <textarea class="form-textarea" name="mensaje" placeholder="Ej: Medicina en la U. de Chile, Ingeniería, Derecho..."></textarea>
           </div>
           <button type="submit" class="btn-form-submit">
             <span>Asegurar cupo de preuniversitario</span>

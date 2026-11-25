@@ -205,14 +205,14 @@
             </div>
           </div>
           <p class="program-card-desc">
-            Educación intensiva, flexible y de calidad para niveles de enseñanza básica y media reconocidos ante el Ministerio de Educación.
+            Educación intensiva, flexible y de calidad para niveles de 5° a 8° Básico reconocidos ante el Ministerio de Educación.
           </p>
           <ul class="program-checklist">
             <li class="program-check-item">
               <span class="check-icon-circle">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </span>
-              Básica y Media completa
+              5° a 8° Básico completo
             </li>
             <li class="program-check-item">
               <span class="check-icon-circle">
@@ -458,7 +458,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>Promoción válida hasta el 30 de julio de 2027</span>
+              <span>Promoción válida hasta el 30 de diciembre de 2027</span>
             </div>
             <div class="pricing-footer-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -480,22 +480,22 @@
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label for="nombreHome" class="form-label">Nombre y apellido *</label>
-                <input type="text" id="nombreHome" class="form-input" placeholder="Tu nombre completo" required>
+                <input type="text" id="nombreHome" name="nombre" class="form-input" placeholder="Tu nombre completo" required>
               </div>
               <div class="form-control-wrap">
                 <label for="telefonoHome" class="form-label">Teléfono *</label>
-                <input type="tel" id="telefonoHome" class="form-input" placeholder="+56 9 9641 1872" required>
+                <input type="tel" id="telefonoHome" name="telefono" class="form-input" placeholder="+56 9 9641 1872" required>
               </div>
             </div>
 
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label for="emailHome" class="form-label">Email *</label>
-                <input type="email" id="emailHome" class="form-input" placeholder="correo@ejemplo.cl" required>
+                <input type="email" id="emailHome" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
               </div>
               <div class="form-control-wrap">
                 <label for="programaHome" class="form-label">Programa de interés *</label>
-                <select id="programaHome" class="form-select" required>
+                <select id="programaHome" name="programa" class="form-select" required>
                   <option value="">Selecciona una opción</option>
                   <option value="Colegio Online">Colegio Online (Exámenes Libres)</option>
                   <option value="Preuniversitario">Preuniversitario (PAES)</option>
@@ -507,7 +507,7 @@
 
             <div class="form-control-wrap">
               <label for="mensajeHome" class="form-label">Mensaje (opcional)</label>
-              <textarea id="mensajeHome" class="form-textarea" placeholder="¿En qué nivel se encuentra el estudiante o qué dudas tienes?"></textarea>
+              <textarea id="mensajeHome" name="mensaje" class="form-textarea" placeholder="¿En qué nivel se encuentra el estudiante o qué dudas tienes?"></textarea>
             </div>
 
             <button type="submit" class="btn-form-submit">
@@ -606,23 +606,23 @@
         <form data-lead-form>
           <div class="form-control-wrap">
             <label for="modalNombre" class="form-label">Nombre y apellido del apoderado o alumno *</label>
-            <input type="text" id="modalNombre" class="form-input" placeholder="Nombre completo" required>
+            <input type="text" id="modalNombre" name="nombre" class="form-input" placeholder="Nombre completo" required>
           </div>
           <div class="form-group-grid">
             <div class="form-control-wrap">
               <label for="modalTelefono" class="form-label">Teléfono / WhatsApp *</label>
-              <input type="tel" id="modalTelefono" class="form-input" placeholder="+56 9..." required>
+              <input type="tel" id="modalTelefono" name="telefono" class="form-input" placeholder="+56 9..." required>
             </div>
             <div class="form-control-wrap">
               <label for="modalEmail" class="form-label">Correo Electrónico *</label>
-              <input type="email" id="modalEmail" class="form-input" placeholder="ejemplo@correo.cl" required>
+              <input type="email" id="modalEmail" name="email" class="form-input" placeholder="ejemplo@correo.cl" required>
             </div>
           </div>
           <div class="form-control-wrap">
             <label for="modalProgramSelect" class="form-label">Nivel o programa de interés *</label>
-            <select id="modalProgramSelect" class="form-select" required>
+            <select id="modalProgramSelect" name="programa" class="form-select" required>
               <option value="">Selecciona el programa</option>
-              <option value="Colegio Online">Colegio Online (1° Básico a 4° Medio)</option>
+              <option value="Colegio Online">Colegio Online (5° a 8° Básico)</option>
               <option value="Preuniversitario">Preuniversitario PAES (Plan Full / Selectivo)</option>
               <option value="Clases Particulares">Clases Particulares y Reforzamiento</option>
               <option value="Examenes Libres">Asesoría para Exámenes Libres</option>
@@ -630,7 +630,7 @@
           </div>
           <div class="form-control-wrap">
             <label for="modalMensaje" class="form-label">Comentarios o dudas adicionales</label>
-            <textarea id="modalMensaje" class="form-textarea" placeholder="Cuéntanos brevemente tu situación académica o consulta."></textarea>
+            <textarea id="modalMensaje" name="mensaje" class="form-textarea" placeholder="Cuéntanos brevemente tu situación académica o consulta."></textarea>
           </div>
           <button type="submit" class="btn-form-submit">
             <span>Enviar solicitud de matrícula</span>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -149,22 +149,22 @@
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label class="form-label">Nombre y apellido *</label>
-                <input type="text" class="form-input" placeholder="Tu nombre" required>
+                <input type="text" name="nombre" class="form-input" placeholder="Tu nombre" required>
               </div>
               <div class="form-control-wrap">
                 <label class="form-label">Teléfono *</label>
-                <input type="tel" class="form-input" placeholder="+56 9 9641 1872" required>
+                <input type="tel" name="telefono" class="form-input" placeholder="+56 9 9641 1872" required>
               </div>
             </div>
 
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label class="form-label">Email *</label>
-                <input type="email" class="form-input" placeholder="correo@ejemplo.cl" required>
+                <input type="email" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
               </div>
               <div class="form-control-wrap">
                 <label class="form-label">Programa de consulta *</label>
-                <select class="form-select" required>
+                <select class="form-select" name="programa" required>
                   <option value="">Selecciona una opción</option>
                   <option value="Colegio Online">Colegio Online (Exámenes Libres)</option>
                   <option value="Preuniversitario">Preuniversitario PAES</option>
@@ -176,7 +176,7 @@
 
             <div class="form-control-wrap">
               <label class="form-label">Mensaje *</label>
-              <textarea class="form-textarea" placeholder="Escribe aquí tu consulta con todo el detalle que desees..." required></textarea>
+              <textarea class="form-textarea" name="mensaje" placeholder="Escribe aquí tu consulta con todo el detalle que desees..." required></textarea>
             </div>
 
             <button type="submit" class="btn-form-submit">
@@ -286,21 +286,21 @@
         <form data-lead-form>
           <div class="form-control-wrap">
             <label class="form-label">Nombre y apellido *</label>
-            <input type="text" class="form-input" placeholder="Nombre completo" required>
+            <input type="text" name="nombre" class="form-input" placeholder="Nombre completo" required>
           </div>
           <div class="form-group-grid">
             <div class="form-control-wrap">
               <label class="form-label">Teléfono *</label>
-              <input type="tel" class="form-input" placeholder="+56 9..." required>
+              <input type="tel" name="telefono" class="form-input" placeholder="+56 9..." required>
             </div>
             <div class="form-control-wrap">
               <label class="form-label">Email *</label>
-              <input type="email" class="form-input" placeholder="correo@ejemplo.cl" required>
+              <input type="email" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
             </div>
           </div>
           <div class="form-control-wrap">
             <label class="form-label">Programa de interés *</label>
-            <select class="form-select" id="modalProgramSelect" required>
+            <select class="form-select" id="modalProgramSelect" name="programa" required>
               <option value="Colegio Online">Colegio Online</option>
               <option value="Preuniversitario">Preuniversitario PAES</option>
               <option value="Clases Particulares">Clases Particulares</option>

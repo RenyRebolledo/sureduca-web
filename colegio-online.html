@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colegio Online | SurEduca - Exámenes Libres y MINEDUC</title>
-  <meta name="description" content="El primer colegio online en Chile fundado por profesores. Formación integral para la vida de 1° Básico a 4° Medio, preparación para exámenes libres con respaldo oficial del MINEDUC.">
+  <meta name="description" content="El primer colegio online en Chile fundado por profesores. Formación integral para la vida de 5° a 8° Básico, preparación para exámenes libres con respaldo oficial del MINEDUC.">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -209,8 +209,8 @@
           <div class="feature-box-content">
             <h3 style="font-size: 1.8rem; margin-bottom: 24px;">¿Para quién es nuestro colegio online?</h3>
             <div class="levels-list">
-              <!-- Educación Básica (1° a 8° Básico) -->
-              <div class="level-row">
+              <!-- Educación Básica (5° a 8° Básico) -->
+              <a href="temario-basica.html" class="level-row level-row-link" title="Ver asignaturas y temarios de 5° a 8° Básico">
                 <div class="level-icon-and-info">
                   <div class="level-icon-circle">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
@@ -219,29 +219,21 @@
                     </svg>
                   </div>
                   <div>
-                    <h4 class="level-title">Educación Básica</h4>
-                    <p class="level-desc">Formación académica sólida con acompañamiento constante e intensivo.</p>
+                    <h4 class="level-title">Educación Básica (5° a 8° Básico)</h4>
+                    <p class="level-desc">Formación académica sólida con acompañamiento constante e intensivo. Haz clic aquí para ver asignaturas y contenidos de cada curso.</p>
                   </div>
                 </div>
-                <span class="level-pill-tag pill-teal">1° Básico a 8° Básico</span>
-              </div>
-
-              <!-- Enseñanza Media -->
-              <div class="level-row">
-                <div class="level-icon-and-info">
-                  <div class="level-icon-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="level-title">Enseñanza Media</h4>
-                    <p class="level-desc">Prepara tu futuro con formación integral y orientación académica.</p>
-                  </div>
-                </div>
-                <span class="level-pill-tag pill-purple">1° Medio a 4° Medio</span>
-              </div>
+                <span class="level-pill-tag pill-teal" style="white-space: nowrap;">5° a 8° Básico →</span>
+              </a>
+            </div>
+            <div style="margin-top: 20px;">
+              <a href="temario-basica.html" class="btn-card-action" style="text-decoration: none;">
+                <span>Ver asignaturas y temarios 5° a 8°</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -278,7 +270,7 @@
                   <circle cx="12" cy="10" r="3"></circle>
                   <path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"></path>
                 </svg>
-                <span>Certificación oficial 7° básico a 4° medio</span>
+                <span>Certificación oficial 5° a 8° Básico</span>
               </div>
               <div class="mineduc-point-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -374,7 +366,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>Promoción válida hasta el 30 de julio de 2027</span>
+              <span>Promoción válida hasta el 30 de diciembre de 2027</span>
             </div>
             <div class="pricing-footer-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -396,35 +388,34 @@
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label for="colegioNombre" class="form-label">Nombre y apellido *</label>
-                <input type="text" id="colegioNombre" class="form-input" placeholder="Nombre completo" required>
+                <input type="text" id="colegioNombre" name="nombre" class="form-input" placeholder="Nombre completo" required>
               </div>
               <div class="form-control-wrap">
                 <label for="colegioTel" class="form-label">Teléfono *</label>
-                <input type="tel" id="colegioTel" class="form-input" placeholder="+56 9 9641 1872" required>
+                <input type="tel" id="colegioTel" name="telefono" class="form-input" placeholder="+56 9 9641 1872" required>
               </div>
             </div>
 
             <div class="form-group-grid">
               <div class="form-control-wrap">
                 <label for="colegioEmail" class="form-label">Email *</label>
-                <input type="email" id="colegioEmail" class="form-input" placeholder="correo@ejemplo.cl" required>
+                <input type="email" id="colegioEmail" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
               </div>
               <div class="form-control-wrap">
                 <label for="colegioNivel" class="form-label">Nivel del estudiante *</label>
-                <select id="colegioNivel" class="form-select" required>
+                <select id="colegioNivel" name="programa" class="form-select" required>
                   <option value="">Selecciona el curso</option>
-                  <option value="1 a 4 Basico">1° a 4° Básico</option>
-                  <option value="5 a 8 Basico">5° a 8° Básico</option>
-                  <option value="1 a 2 Medio">1° y 2° Medio</option>
-                  <option value="3 a 4 Medio">3° y 4° Medio</option>
-                  <option value="Examenes Libres Adultos">Exámenes Libres Adultos</option>
+                  <option value="5 Basico">5° Básico</option>
+                  <option value="6 Basico">6° Básico</option>
+                  <option value="7 Basico">7° Básico</option>
+                  <option value="8 Basico">8° Básico</option>
                 </select>
               </div>
             </div>
 
             <div class="form-control-wrap">
               <label for="colegioMsg" class="form-label">Mensaje (opcional)</label>
-              <textarea id="colegioMsg" class="form-textarea" placeholder="Escribe aquí cualquier consulta o requerimiento específico."></textarea>
+              <textarea id="colegioMsg" name="mensaje" class="form-textarea" placeholder="Escribe aquí cualquier consulta o requerimiento específico."></textarea>
             </div>
 
             <button type="submit" class="btn-form-submit">
@@ -522,29 +513,31 @@
         <form data-lead-form>
           <div class="form-control-wrap">
             <label class="form-label">Nombre del apoderado o estudiante *</label>
-            <input type="text" class="form-input" placeholder="Nombre completo" required>
+            <input type="text" name="nombre" class="form-input" placeholder="Nombre completo" required>
           </div>
           <div class="form-group-grid">
             <div class="form-control-wrap">
               <label class="form-label">Teléfono / WhatsApp *</label>
-              <input type="tel" class="form-input" placeholder="+56 9..." required>
+              <input type="tel" name="telefono" class="form-input" placeholder="+56 9..." required>
             </div>
             <div class="form-control-wrap">
               <label class="form-label">Email *</label>
-              <input type="email" class="form-input" placeholder="correo@ejemplo.cl" required>
+              <input type="email" name="email" class="form-input" placeholder="correo@ejemplo.cl" required>
             </div>
           </div>
           <div class="form-control-wrap">
             <label class="form-label">Nivel académico a cursar *</label>
-            <select class="form-select" id="modalProgramSelect" required>
-              <option value="Educación Básica">1° a 8° Básico</option>
-              <option value="Enseñanza Media" selected>1° a 4° Medio</option>
-              <option value="Exámenes Libres">Preparación Exámenes Libres</option>
+            <select class="form-select" id="modalProgramSelect" name="programa" required>
+              <option value="5° Básico">5° Básico</option>
+              <option value="6° Básico">6° Básico</option>
+              <option value="7° Básico">7° Básico</option>
+              <option value="8° Básico">8° Básico</option>
+              <option value="Colegio Online" selected>5° a 8° Básico (Exámenes Libres)</option>
             </select>
           </div>
           <div class="form-control-wrap">
             <label class="form-label">Comentarios adicionales</label>
-            <textarea class="form-textarea" placeholder="Indícanos si el estudiante viene de otro colegio o si rendirá exámenes libres."></textarea>
+            <textarea class="form-textarea" name="mensaje" placeholder="Indícanos si el estudiante viene de otro colegio o si rendirá exámenes libres."></textarea>
           </div>
           <button type="submit" class="btn-form-submit">
             <span>Solicitar cupo de matrícula</span>

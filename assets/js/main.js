@@ -86,29 +86,33 @@ document.addEventListener('DOMContentLoaded', () => {
       toast = document.createElement('div');
       toast.id = 'systemToast';
       toast.className = 'toast-notice';
-      toast.innerHTML = `
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a499" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-          <polyline points="22 4 12 14.01 9 11.01"></polyline>
-        </svg>
-        <span id="toastMessage"></span>
-      `;
       document.body.appendChild(toast);
     }
 
-    const toastMessage = toast.querySelector('#toastMessage');
-    if (toastMessage) toastMessage.textContent = message;
+    // Configurar icono y color según el tipo
+    const iconColor = type === 'success' ? '#00a499' : (type === 'warning' ? '#f59e0b' : '#ef4444');
+    const borderColor = type === 'success' ? 'var(--primary-teal, #00a499)' : (type === 'warning' ? '#f59e0b' : '#ef4444');
+    
+    toast.style.borderLeftColor = borderColor;
+    toast.innerHTML = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${iconColor}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        ${type === 'success' 
+          ? '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>' 
+          : '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>'}
+      </svg>
+      <span id="toastMessage">${message}</span>
+    `;
 
     toast.classList.add('show');
     setTimeout(() => {
       toast.classList.remove('show');
-    }, 4500);
+    }, 5500);
   }
 
-  // 5. Manejo de Formularios (Envío a moises.bravo@sureduca.cl y reny.rebolledo@sureduca.cl)
+  // 5. Manejo de Formularios (Envío a reny.rebolledo@sureduca.cl y moises.bravo@sureduca.cl + Confirmación al postulante)
   const forms = document.querySelectorAll('form[data-lead-form]');
   forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn ? submitBtn.innerHTML : 'Enviar';
@@ -118,63 +122,87 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = 'Enviando...';
       }
 
-      // Recopilar datos del formulario
-      const formData = new FormData(form);
-      const dataObj = {};
-      formData.forEach((value, key) => {
-        dataObj[key] = value;
-      });
-
-      // Construcción del correo de notificación
-      const nombre = form.querySelector('input[name="name"], input[placeholder*="Nombre"]')?.value || 'Interesado';
-      const telefono = form.querySelector('input[type="tel"], input[placeholder*="Teléfono"], input[placeholder*="WhatsApp"]')?.value || 'No indicado';
-      const email = form.querySelector('input[type="email"]')?.value || 'No indicado';
+      // Recopilar datos del formulario con selectores flexibles
+      const nombre = form.querySelector('input[name="name"], input[name="nombre"], input[placeholder*="Nombre"]')?.value?.trim() || 'Interesado';
+      const telefono = form.querySelector('input[type="tel"], input[name="phone"], input[name="telefono"], input[placeholder*="Teléfono"], input[placeholder*="WhatsApp"]')?.value?.trim() || 'No indicado';
+      const email = form.querySelector('input[type="email"], input[name="email"]')?.value?.trim() || '';
       const nivel = form.querySelector('select')?.value || 'General / Matrícula 2027';
-      const mensaje = form.querySelector('textarea')?.value || 'Solicitud de información sobre matrículas 2027';
+      const mensaje = form.querySelector('textarea')?.value?.trim() || 'Solicitud de información sobre matrículas 2027';
 
-      const subject = encodeURIComponent(`Nueva Solicitud SurEduca 2027: ${nombre} - ${nivel}`);
-      const body = encodeURIComponent(
-        `Hola Equipo SurEduca,\n\nSe ha recibido una nueva solicitud a través del sitio web:\n\n` +
-        `• Nombre: ${nombre}\n` +
-        `• Teléfono / WhatsApp: ${telefono}\n` +
-        `• Correo: ${email}\n` +
-        `• Nivel / Interés: ${nivel}\n` +
-        `• Mensaje / Consulta: ${mensaje}\n\n` +
-        `---\nSurEduca - Admisión 2027`
-      );
+      // Mensaje cordial de auto-respuesta enviado automáticamente al correo del solicitante
+      const autoResponseText = 
+`Estimado(a) ${nombre},
 
-      // Enviar de forma silenciosa y real a los 2 correos mediante servicio seguro de formulario web
+¡Muchas gracias por tu interés en SurEduca!
+
+Hemos recibido con éxito tus datos para la postulación e información del proceso de Matrícula 2027.
+
+Resumen de la información registrada:
+• Programa / Nivel de interés: ${nivel}
+• Teléfono de contacto: ${telefono}
+• Correo electrónico: ${email}
+• Consulta o mensaje: ${mensaje}
+
+Uno de nuestros coordinadores pedagógicos revisará tu solicitud y se pondrá en contacto contigo a la brevedad posible a través de WhatsApp o llamada telefónica para orientarte en detalle.
+
+Si deseas comunicarte de inmediato con nosotros:
+• WhatsApp Oficial Admisiones: +56 9 9641 1872
+• Sitio Web: https://sureduca.cl
+
+Atentamente,
+Equipo de Admisión y Matrículas 2027
+Fundación Educacional SurEduca Chile`;
+
+      // Payload organizado para FormSubmit
       const payload = {
-        name: nombre,
-        phone: telefono,
-        email: email,
-        level: nivel,
-        message: mensaje,
-        _subject: `Nueva Solicitud Web SurEduca 2027: ${nombre} (${nivel})`,
-        _cc: "reny.rebolledo@sureduca.cl"
+        "Nombre del Solicitante": nombre,
+        "Teléfono / WhatsApp": telefono,
+        "Correo Electrónico": email,
+        "Programa o Nivel de Interés": nivel,
+        "Mensaje o Consulta": mensaje,
+        "Fecha de Envío": new Date().toLocaleString('es-CL'),
+        "_subject": `Nueva Solicitud Matrícula SurEduca 2027: ${nombre} (${nivel})`,
+        "_cc": "moises.bravo@sureduca.cl",
+        "_replyto": email,
+        "_template": "table",
+        "_captcha": "false",
+        "_autoresponse": autoResponseText
       };
 
-      fetch("https://formsubmit.co/ajax/moises.bravo@sureduca.cl", {
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      })
-      .then(response => response.json())
-      .catch(err => {
-        console.log("Notificación enviada");
-      })
-      .finally(() => {
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/reny.rebolledo@sureduca.cl", {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && (result.success === true || result.success === "true")) {
+          showToast('¡Solicitud enviada con éxito! Te hemos enviado un correo de confirmación y te contactaremos prontamente.', 'success');
+          form.reset();
+          closeModal();
+        } else if (result.message && result.message.includes('Activation')) {
+          console.warn("FormSubmit requiere activación:", result.message);
+          showToast('Formulario pendiente de activación: Revisa el correo de confirmación de FormSubmit en tu bandeja.', 'warning');
+        } else if (window.location.protocol === 'file:') {
+          console.warn("Aviso de seguridad del navegador: FormSubmit no admite envío desde archivos locales file://.");
+          showToast('Para probar envíos reales debes abrir la web a través de un servidor (Live Server, localhost o Vercel).', 'warning');
+        } else {
+          showToast(result.message || 'No se pudo completar el envío. Por favor contáctanos directo a WhatsApp.', 'error');
+        }
+      } catch (err) {
+        console.error("Error al enviar formulario:", err);
+        showToast('Error de conexión al enviar. Puedes escribirnos directo al WhatsApp +56 9 9641 1872.', 'error');
+      } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
-        form.reset();
-        closeModal();
-        showToast('¡Gracias por contactarnos! Tu solicitud fue enviada a los correos de admisión y te responderemos a la brevedad.');
-      });
+      }
     });
   });
 
@@ -191,6 +219,35 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const msg = encodeURIComponent('¡Hola SurEduca! Quisiera solicitar más información sobre las matrículas 2027.');
       window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+    });
+  });
+
+  // 7. Sistema de Pestañas (Cursos / Servicios para Colegios y Temario 5° a 8°)
+  document.querySelectorAll('.tabs-bar').forEach(tabBar => {
+    const buttons = tabBar.querySelectorAll('[data-tab-target]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab-target');
+        const targetPanel = document.getElementById(targetId);
+        if (!targetPanel) return;
+
+        // Desactivar botones de esta barra
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        // Ocultar paneles hermanos de esta sección
+        const parentSection = tabBar.parentElement;
+        parentSection?.querySelectorAll('.tab-panel').forEach(panel => {
+          panel.classList.remove('active');
+        });
+
+        // Activar seleccionado
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        targetPanel.classList.add('active');
+      });
     });
   });
 });
